@@ -8,12 +8,12 @@
 </head>
 <body>
     <div class="conteiner">
-        <nav>
+        <nav> <!-- Menu a esquerda -->
             <ul class="menu">
                 <a href="index.php"><li>Cadastro</li></a>
                 <a href="consultas.php"><li>Consultar</li></a>
             </ul>
-        </nav>
+        </nav> <!-- Fecha menu a esquerda -->
         <section>
             <h1 class="title">Cadastros de Máquinas</h1>
             <hr><br><br>
@@ -24,54 +24,61 @@
                 <br><br><br>
 
                 Setor<br>
-                <input type="text" name="setor" class="campo" maxlength="40" required autofocus><br>
+                <input type="text" name="setor" class="campo" maxlength="50" required autofocus><br>
                 Colaborador<br>
                 <input type="text" name="colaborador" class="campo" maxlength="50"><br><br>
                 <h3>Computador</h3><br>
-                Patrimônio
+                Patrimônio<br>
                 <input type="text" name="patrimonio" class="campo" maxlength="50"><br>
-                Marca
+                Marca<br>
                 <input type="text" name="marca" class="campo" maxlength="50"><br>
-                Processador
+                <!-- <select class="span" name="marca" value="">
+                    <option value="">Selecione</option>
+                    <option value="COMPAQ">COMPAQ</option>
+                    <option value="PAUTA">PAUTA</option>
+                    <option value="HP">HP</option>
+                    <option value="OUTRO">OUTRO</option>
+                </select><br> -->
+                Processador<br>
                 <input type="text" name="processador" class="campo" maxlength="50"><br>
-                Memória
+                Memória<br>
                 <input type="text" name="memoria" class="campo" maxlength="50"><br>
-                HD
+                HD<br>
                 <input type="text" name="hd" class="campo" maxlength="50"><br>
-                SSD
-                <input type="text" name="ssd"" class="campo" maxlength="50"><br><br>
+                SSD<br>
+                <input type="text" name="ssd" class="campo" maxlength="50"><br><br>
                 <h3>Monitor</h3><br>
-                Marca Monitor
+                Marca Monitor<br>
                 <input type="text" name="monitor" class="campo" maxlength="50"><br>
-                Modelo
+                Modelo<br>
                 <input type="text" name="modelo" class="campo" maxlength="50"><br>
-                Tamanho
+                Tamanho<br>
                 <input type="text" name="tamanho" class="campo" maxlength="50"><br>
-                Tipo
+                Tipo<br>
                 <input type="text" name="tipo" class="campo" maxlength="50"><br>
-                Patrimônio
-                <input type="text" name="patrimonio_monitor" class="campo" maxlength="50"><br><br>
+                Patrimônio<br>
+                <input type="text" name="patrimonio-monitor" class="campo" maxlength="50"><br><br>
                 <h3>Periféricos</h3><br>
-                Teclado
+                Teclado<br>
                 <input type="text" name="teclado" class="campo" maxlength="50"><br>
-                Mouse
-                <input type="text" name="teclado" class="campo" maxlength="50"><br>
-                Outros
-                <input type="text" name="teclado" class="campo" maxlength="50"><br><br>
+                Mouse<br>
+                <input type="text" name="mouse" class="campo" maxlength="50"><br>
+                Outros<br>
+                <input type="text" name="outros" class="campo" maxlength="50"><br><br>
                 <h3>Rede</h3><br>
-                Host
+                Host<br>
                 <input type="text" name="host" class="campo" maxlength="50"><br>
-                MAC
+                MAC<br>
                 <input type="text" name="mac" class="campo" maxlength="50"><br>
-                IP
+                IP<br>
                 <input type="text" name="ip" class="campo" maxlength="50"><br><br>
                 <h3>Software</h3><br>
-                Sistema Operacional
-                <input type="text" name="so" class="campo" maxlength="50"><br><br>
+                Sistema Operacional<br>
+                <input type="text" name="so" class="campo" maxlength="50"><br>
                 Pacote Office<br>
                 <input type="text" name="po" class="campo" maxlength="50"><br>
                 Licenças<br>
-                <input type="text" name="licencas" class="campo" maxlength="50"><br>
+                <input type="text" name="licenca" class="campo" maxlength="50"><br>
                 Situação<br>
                 <input type="text" name="situacao" class="campo" maxlength="50"><br>
                 Observação<br>

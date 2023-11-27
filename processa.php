@@ -2,11 +2,31 @@
 
 include_once("conexao.php");
 
-$nome = $_POST['nome'];
-$email = $_POST['email'];
-$profissao = $_POST['profissao'];
+$setor = $_POST['setor'];
+$colaborador= $_POST['colaborador'];
+$patrimonio = $_POST['patrimonio'];
+$marca = $_POST['marca'];
+$processador = $_POST['processador'];
+$memoria = $_POST['memoria'];
+$hd = $_POST['hd'];
+$ssd = $_POST['ssd'];
+$monitor = $_POST['monitor'];
+$modelo = $_POST['modelo'];
+$tamanho = $_POST['tamanho'];
+$tipo = $_POST['tipo'];
+$teclado = $_POST['teclado'];
+$mouse = $_POST['mouse'];
+$outros = $_POST['outros'];
+$host = $_POST['host'];
+$mac = $_POST['mac'];
+$ip = $_POST['ip'];
+$sistemaOperacional = $_POST['so'];
+$pacoteOffice = $_POST['po'];
+$licenca = $_POST['licenca'];
+$situacao = $_POST['situacao'];
+$observacao = $_POST['observacao'];
 
-$sql = "insert into usuarios (nome,email,profissao) values ('$nome','$email','$profissao')";
+$sql = "insert into usuarios (setor, colaborador, patrimonio, marca, processador, memoria, hd, ssd, monitor, modelo, tamanho, tipo, teclado, mouse, outros, host, mac, ip, so, po, licenca, situacao, obervacao) values ('$setor', '$colaborador', '$patrimonio', '$marca', '$rocessador', '$memoria', '$hd', '$ssd', '$monitor', '$modelo', '$tamanho', '$tipo', '$teclado', '$mouse', '$outros', '$host', '$mac', '$ip', '$so', '$po', '$licenca', '$situacao', '$obervacao')";
 $salvar = mysqli_query($conexao, $sql);
 
 $linhas = mysqli_affected_rows($conexao);
@@ -21,7 +41,7 @@ mysqli_close($conexao);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Inventário</title>
-    <link rel="stylesheet" href="css/estilo-css.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="conteiner">
