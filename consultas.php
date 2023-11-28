@@ -2,36 +2,12 @@
 
 include_once("conexao.php");
 
-$setor = $_POST['setor'];
-$colaborador= $_POST['colaborador'];
-$patrimonio = $_POST['patrimonio'];
-$marca = $_POST['marca'];
-$processador = $_POST['processador'];
-$memoria = $_POST['memoria'];
-$hd = $_POST['hd'];
-$ssd = $_POST['ssd'];
-$monitor = $_POST['monitor'];
-$modelo = $_POST['modelo'];
-$tamanho = $_POST['tamanho'];
-$tipo = $_POST['tipo'];
-$teclado = $_POST['teclado'];
-$mouse = $_POST['mouse'];
-$outros = $_POST['outros'];
-$host = $_POST['host'];
-$mac = $_POST['mac'];
-$ip = $_POST['ip'];
-$sistemaOperacional = $_POST['so'];
-$pacoteOffice = $_POST['po'];
-$licenca = $_POST['licenca'];
-$situacao = $_POST['situacao'];
-$observacao = $_POST['observacao'];
+$filtro = isset($_GET['filtro'])?$_GET['filtro'] :"";
 
-$sql = "insert into usuarios (setor, colaborador, patrimonio, marca, processador, memoria, hd, ssd, monitor, modelo, tamanho, tipo, teclado, mouse, outros, host, mac, ip, so, po, licenca, situacao, observacao) values ('$setor', '$colaborador', '$patrimonio', '$marca', '$rocessador', '$memoria', '$hd', '$ssd', '$monitor', '$modelo', '$tamanho', '$tipo', '$teclado', '$mouse', '$outros', '$host', '$mac', '$ip', '$so', '$po', '$licenca', '$situacao', '$observacao')";
-$salvar = mysqli_query($conexao, $sql);
-
-$linhas = mysqli_affected_rows($conexao);
-
-mysqli_close($conexao);
+$sql = "select * from computadores where colaborador like '%$filtro%' ";
+//$sql = "select * from computadores where setor like '%$filtro%' ";
+$consulta = mysqli_query($conexao, $sql);
+$registros = mysqli_num_rows($consulta);
 
 ?>
 
@@ -50,21 +26,77 @@ mysqli_close($conexao);
                 <a href="index.php"><li>Cadastro</li></a>
                 <a href="consultas.php"><li>Consultas</li></a>
             </ul>
-        </nav>
+        </nav>        
         <section>
-            <h1 class="title">Confirmação de Cadastro</h1>
-            <hr><br><br>
+            <h1 class="title">Consultas</h1>
+            <hr><br>
 
-            <div class="subtitle">
+            <form class="form" method="get" action="">
+                Filtrar por Colaborador: <input type="text" name="filtro" class="campo" required autofocus>
+                <input type="submit" value="Pesquisar" class="btn">
+            </form>
+            <div class="print">
                 <?php
 
-                if ($linhas == 1){
-                    echo "Cadastro efetuado com sucesso!";
-                } else {
-                    echo "Cadastro não efetuado. <br>";
+                print "Resultado da pesquisa com a palavra <b>$filtro</b><br><br>";
+
+                print "$registros registros encontrados.";
+
+                print "<br><br>";
+
+                while($exibirRegistros = mysqli_fetch_array($consulta)) {
+
+                    $codigo = $exibirRegistros[0];
+                    $setor = $exibirRegistros[1];
+                    $colaborador= $exibirRegistros[2];
+                    $marca = $exibirRegistros[3];
+                    $processador = $exibirRegistros[4];
+                    $memoria = $exibirRegistros[5];
+                    $hd = $exibirRegistros[6];
+                    $ssd = $exibirRegistros[7];
+                    $monitor = $exibirRegistros[8];
+                    $modelo = $exibirRegistros[9];
+                    $tamanho = $exibirRegistros[10];
+                    $teclado = $exibirRegistros[11];
+                    $mouse = $exibirRegistros[12];
+                    $mac = $exibirRegistros[13];
+                    $ip = $exibirRegistros[14];
+                    $so = $exibirRegistros[15];
+                    $po = $exibirRegistros[16];
+                    $situacao = $exibirRegistros[17];
+                    $observacao = $exibirRegistros[18];
+                    
+                    print "<article>";
+                
+                    print"codigo: <b>$codigo</b><br>";
+                    print"Nome: $setor<br>";
+                    print"Colaborador: $colaborador<br>";
+                    print"Marca Computador: $marca<br>";
+                    print"Processador: $processador<br>";
+                    print"Memória: $memoria<br>";
+                    print"HD: $hd<br>";
+                    print"SSD: $ssd<br>";
+                    print"Marca monitor: $monitor<br>";
+                    print"Modelo: $modelo<br>";
+                    print"Tamanho:$tamanho<br>";
+                    print"Teclado: $teclado<br>";
+                    print"Mouse: $mouse<br>";
+                    print"MAC: $mac<br>";
+                    print"IP: $ip<br>";
+                    print"Sistema Operacional: $so<br>";
+                    print"Pacote Office: $po<br>";
+                    print"Situação: $situacao<br>";
+                    print"Observação: $observacao<br>";
+
+
+                    print "</article>";
+
                 }
 
+                mysqli_close($conexao);
+
                 ?>
+
             </div>
         </section>
     </div>

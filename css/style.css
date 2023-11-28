@@ -1,6 +1,8 @@
 *{
     margin: 0;
     padding: 0;
+    border-radius: 5px;
+
 }
 
 a {
@@ -16,9 +18,9 @@ body {
 
 .conteiner {
     margin: auto;
-    width: 1200px;
+    width: 1230px;
     margin-top: 20px;
-    padding: 10px;
+    padding: 10px; 
 }
 
 nav {
@@ -27,12 +29,12 @@ nav {
     background-color:  #444;
     float: left;
     box-sizing: border-box;
-    padding: 10px;
-    
+    padding: 15px;
+    border-radius: 5px;
 }
 
 section {
-    width: 870px;
+    width: 900px;
     height: relative;
     margin-left: 15px;
     float: left;
@@ -54,14 +56,15 @@ ul.menu li{
     color: #fff;
     margin-top: 5px;
     box-sizing: border-box;
-    padding-left: 10px;
+    padding-left: 18px;
+    border-radius: 5px;
 }
 
 .btn {
     width: 100px;
     height: 30px;
-    border: 1px solid #8f8f8f; 
-    background-color: rgb(29, 100, 206);
+    border: 1px solid rgb(141, 141, 141); 
+    background-color: rgb(125, 129, 134);
     color: #fff;
     cursor: pointer;
 }
@@ -72,6 +75,8 @@ ul.menu li{
     border: 1px solid #ccc;
     margin-top: 5px;
     margin-bottom: 10px;
+    
+    
 }
 
 select.span{
@@ -83,19 +88,32 @@ select.span{
 }
 
 article {
-    width: 100%;
+    font-size: 13pt;
+    border-radius: 7px;
+    width: 97.5%;
     box-sizing: border-box;
     padding: 10px;
     background-color: #d6d5d5;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+
 }
 
 .formulario {   
     margin-bottom: 40px;
     margin-left: 15px;
+    
 }
 
 .title{
     margin-top: 10px;
     margin-left: 10px;
 }
+
+.form{
+    margin-left: 10px;
+}
+
+.print {
+    margin-left: 10px;
+}
+
